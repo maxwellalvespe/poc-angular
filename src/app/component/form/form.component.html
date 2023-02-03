@@ -1,1 +1,18 @@
-<p>form works!</p>
+<form class="example-form" [formGroup]="form" (submit)="salvar()">
+    <mat-form-field class="example-form-field">
+        <mat-label>nome</mat-label>
+        <input matInput type="text" id="nome" formControlName="nome">
+    </mat-form-field>
+    
+    <mat-form-field class="example-form-field">
+        <mat-label>email</mat-label>
+        <input matInput type="text" id="email" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field">
+        <mat-label>cpf</mat-label>
+        <input matInput type="text" id="cpf" formControlName="cpf">
+    </mat-form-field>
+
+    <button mat-stroked-button color="accent" type="submit">salvar</button>
+</form>

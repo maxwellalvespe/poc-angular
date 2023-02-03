@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { first, Observable } from 'rxjs';
 import { User } from '../model/user';
 
 @Injectable({
@@ -17,6 +17,7 @@ export class UserService {
   }
 
   postUser(usuario :User){
-    this.http.post(this.path,usuario)
+   return  this.http.post<User>(this.path,usuario).pipe(first())
+    console.log('requisicao enviada para o back')
   }
 }
